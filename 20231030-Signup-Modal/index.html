@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cuisine Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1st section -->
+    <!-- nav:結構化元素，用於導航 -->
+    <nav id="navbar" class="navbar">
+            <div class="logo-container"></div>
+        <img src="images/logo.png" alt="Cuisine logo" class="logo"/>
+        </div>
+        <ul class="menu-list">
+            <!-- 指令：li*5>a -->
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Drink</a></li>
+            <li><a href="#">Travels</a></li>
+            <li><a href="#">Hospitality</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2nd section -->
+    <header>
+    <button class="menu-bar" id="toggle">
+        <ion-icon name="menu-outline" class="menu.icon"></ion-icon>
+    </button>
+
+    <h1 class="heading">The Cuisine Time</h1>
+    <p class="cuisine-desc">
+        A Cuisine is partly determined by ingredients that are available locally or through trade.Regional ingredients are developed and commonly contribute to a regional or national cuisine, such as Japanese rice in Japanese cuisine.</p>
+
+    <button class="sign-btn" id="open">Sign Up</button>
+    </header>
+    
+    <!-- 3rd Section:開啟表單的畫面-->
+    <main class="modal-container" id="modal">
+    <div class="modal-open">
+        <button class="close-btn" id="close">
+            <!-- X符號 -->
+            <ion-icon name="close-outline" class="close-icon"></ion-icon>
+        </button>
+        <div class="modal-header">
+            <h3 class="modal heading">Sign Up</h3>
+        </div>
+        <div class="modal-content">
+            <p class="modal-tag">Low cost. High quality</p>
+            <form class="modal-form">
+                <div>
+                    <label for="name" class="form-label">Name</label>
+                    <!-- 輸入框 -->
+                    <!-- aria-autocomplete="off"自動完成功能關閉 -->
+                    <input type="text" placeholder="Enter your name"
+                    class="form-input" aria-autocomplete="off" id="name"/>
+                </div>
+
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <!-- 輸入框 -->
+                    <!-- aria-autocomplete="off"自動完成功能關閉 -->
+                    <input type="text" placeholder="Enter your email"
+                    class="form-input" aria-autocomplete="off" id="email"/>
+                </div>
+
+                <div>
+                    <label for="mobile" class="form-label">Mobile</label>
+                    <!-- 輸入框 -->
+                    <!-- aria-autocomplete="off"自動完成功能關閉 -->
+                    <input type="number" placeholder="Enter your mobile"
+                    class="form-input" aria-autocomplete="off" id="mobile"/>
+                </div>
+
+                <div>
+                    <label for="password" class="form-label">Password</label>
+                    <!-- 輸入框 -->
+                    <!-- aria-autocomplete="off"自動完成功能關閉 -->
+                    <input type="password" placeholder="Enter your password"
+                    class="form-input" aria-autocomplete="off" id="password"/>
+                </div>
+
+                <div>
+                    <label for="cpassword" class="form-label">Confirm Password</label>
+                    <!-- 輸入框 -->
+                    <!-- aria-autocomplete="off"自動完成功能關閉 -->
+                    <input type="password" placeholder="Confirm Password"
+                    class="form-input" aria-autocomplete="off" id="password"/>
+                </div>
+                <input type="submit" class="submit-btn sign-btn"/>
+            </form>
+        </div>
+    </div>
+</main>
+
+    <!-- icon庫 -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

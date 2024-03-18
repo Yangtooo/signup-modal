@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/*font-family: 'Roboto', sans-serif;*/
+/*定義全局CSS變數 */
+:root{
+    --first-color:#1f1717;
+    --second-color:#d66666;
+    --thrid-color:#f4bf96;
+    --fourth-color:#fcf5ed;
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    /* 10px/16px=0.625=62.5% */
+    font-size:62.5%;
+    
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    /* 當transform改變時，增加平滑效果 */
+    transition: transform 0.5s ease-in;
+    /* 元素內容在水平方向上的溢出部分將被隱藏，不會顯示在元素的邊界之外 */
+    overflow-x:hidden;
+}
+body.show-nav{
+    /* 水平方向的平移，這剛好可以移出螢幕外面 */
+    transform: translateX(25rem);
+}
+/* Navigation */
+#navbar{
+    background-color:var(--second-color);
+    width:25rem;
+    height:100vh;
+    z-index:100;
+    position:fixed;
+    top:0;
+    left:0;
+    /* display:none; */
+    /* X:水平移動 */
+    transform: translateX(-100%);
+}
+
+.logo-container{
+    padding:2rem;
+    /* text-align:center; */
+}
+
+.logo{
+    height:20rem;
+    width:20rem;
+}
+
+.menu-list{
+    padding:2rem;
+    /* 隱藏列表前面的黑點 */
+    list-style-type:none;
+    border-top:2px solid rgba(230,228,228,0.3);
+    border-bottom:2px solid rgba(230,228,228,0.3);
+
+}
+.menu-list li{
+    text-align:center;
+    /* 列表之間間隔2rem */
+    padding:2rem;
+}
+
+.menu-list li a{
+    color:var(--fourth-color);
+    font-size:1.6rem;
+    text-decoration: none;
+}
+
+/* LVHA */
+/* 當滑鼠移動到列表時 */
+.menu-list li a:hover{
+    color:var(--first-color);
+    text-decoration: underline;
+}
+
+/* Header */
+header{
+    background-color: VAR(--first-color);
+    color:var(--fourth-color);
+    padding:4rem 1.5rem;
+    text-align: center;
+    position:relative;
+    /* margin-top:200px; */
+}
+
+
+/* 標題下的內文 */
+.cuisine-desc{
+    font-size:1.6rem;
+    width:65%;
+    margin:0 auto 3rem auto;
+}
+
+.sign-btn, 
+input[type="submit"]{
+    background-color:var(--second-color);
+    border:0;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    color:var(--fourth-color);
+    cursor:pointer;
+}
+
+.menu-bar{
+    background-color: var(--second-color);
+    border:0;
+    padding:0.8rem;
+    cursor: pointer;
+    position:absolute;
+    top:2.2rem;
+    left:2.2rem;
+}
+
+.menu.icon{
+    font-size: 2rem;
+}
+/* MODAL */
+.modal-container{
+    background-color:rgba(0,0,0,0.6);
+    /* 無論如何滾動頁面，元素都會保留在原本的位置 */
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:none;
+}
+
+.modal-container.show-modal{
+    display:block;
+}
+
+.modal-open{
+    background-color:var(--fourth-color);
+    width:40.1rem;
+    position: absolute;
+    /* 網頁各佔一半 */
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:2rem;
+    box-shadow:0 0 2rem rgba(0,0,0,0.5);
+    /* 定義動畫類別animateModal */
+    animation-name: animateModal;
+    /* 動畫過渡秒數 */
+    animation-duration:0.7s;
+}
+
+@keyframes animateModal {
+    /* 設定半透明狀態opacity從0.4到1 */
+    from{
+        opacity:0.4;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.modal-header{
+    background-color: var(--second-color);
+    color: var(--fourth-color);
+    padding:1rem;
+    font-size:1.4rem;
+    margin-bottom:2rem;
+    
+}
+
+.modal-tag{
+    text-align:center;
+    font-size:1.5rem;
+}
+
+.modal-form div{
+    margin:1.8rem 0;
+}
+
+.form-label{
+    /* 以獨立區塊顯示 */
+    display:block;
+    margin-bottom:5px;
+    font-size:1.5rem;
+    /* 設定文字粗細:500 */
+    font-weight:500;
+}
+
+.form-input{
+    padding:0.8rem;
+    width:100%;
+}
+
+.close-btn{
+    /* 設定元素背景為透明 */
+    background:transparent; 
+    font-size:2.5rem;
+    /* 去除邊框 */
+    border:0;
+    position:absolute;
+    top:2.3rem;
+    right:2.5rem;
+}
+
+.close-icon{
+    color:var(--fourth-color);
+    font-size:3rem;
+    cursor:pointer;
+}
+
+
